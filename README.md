@@ -1,3 +1,3 @@
 # TESTING
 
-only for testing !!
+only for testing
