@@ -19,7 +19,6 @@ jobs:
   test:
     name: Run Python CI
     runs-on: ubuntu-latest
-    python-version: "3.13"
 
     steps:
       # Step 1 - Checkout repository
@@ -37,7 +36,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          key: ${{ runner.os }}-python-3.13-pip-${{ hashFiles('requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
 
@@ -50,9 +49,7 @@ jobs:
             pip install -r requirements.txt
           fi
 
-          pip install pytest
-          pip install ruff
-          pip install pyright
+          pip install pytest ruff pyright
 
       # Step 5 - Check formatting
       - name: Check Formatting (Ruff)
@@ -68,7 +65,6 @@ jobs:
       - name: Run Pyright
         run: |
           pyright
-        continue-on-error: true
 
       # Step 8 - Run unit tests
       - name: Run Pytest
