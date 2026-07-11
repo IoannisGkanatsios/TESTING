@@ -44,12 +44,7 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-
-          if [ -f requirements.txt ]; then
-            pip install -r requirements.txt
-          fi
-
-          pip install pytest ruff pyright
+          pip install -e ".[dev]"
 
       # Step 5 - Check formatting
       - name: Check Formatting (Ruff)
