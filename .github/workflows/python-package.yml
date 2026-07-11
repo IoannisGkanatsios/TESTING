@@ -54,17 +54,17 @@ jobs:
       # Step 5 - Check formatting
       - name: Check Formatting (Ruff)
         run: |
-          ruff format --check .
+          ruff format --check src/
 
       # Step 6 - Check linting
       - name: Run Ruff Linter
         run: |
-          ruff check .
+          ruff check src/
 
       # Step 7 - Static type checking (Pyright/Pylance)
       - name: Run Pyright
         run: |
-          pyright
+          pyright src/
 
       # # Step 8 - Run unit tests
       # - name: Run Pytest
