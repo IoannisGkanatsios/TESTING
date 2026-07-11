@@ -51,20 +51,20 @@ jobs:
 
           pip install pytest ruff pyright
 
-      # # Step 5 - Check formatting
-      # - name: Check Formatting (Ruff)
-      #   run: |
-      #     ruff format --check .
+      # Step 5 - Check formatting
+      - name: Check Formatting (Ruff)
+        run: |
+          ruff format --check .
 
-      # # Step 6 - Check linting
-      # - name: Run Ruff Linter
-      #   run: |
-      #     ruff check .
+      # Step 6 - Check linting
+      - name: Run Ruff Linter
+        run: |
+          ruff check .
 
-      # # Step 7 - Static type checking (Pyright/Pylance)
-      # - name: Run Pyright
-      #   run: |
-      #     pyright
+      # Step 7 - Static type checking (Pyright/Pylance)
+      - name: Run Pyright
+        run: |
+          pyright
 
       # # Step 8 - Run unit tests
       # - name: Run Pytest
