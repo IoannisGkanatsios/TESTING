@@ -13,5 +13,5 @@ def load(insurance_path: str) -> pd.DataFrame:
     return df_property
 
 
-def write(df: pd.DataFrame  , path: )-> None:
+def write(df: pd.DataFrame, path: Path) -> None:
     df.to_csv(path)
